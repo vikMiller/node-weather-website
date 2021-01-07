@@ -17,7 +17,7 @@ const forecast = (lat, long, callback) => {
             const feelsLike = current.feelslike
             const location = body.location.region
             // console.log('It is currently ' + temperature + ' degress in ' + location + '. It feels like ' + feelsLike + ' degress.')
-            callback(undefined, 'It is currently ' + temperature + ' degress in ' + location + '. It feels like ' + feelsLike + ' degress.')
+            callback(undefined, body.current.weather_descriptions[0] + '. It is currently ' + temperature + ' degress in ' + location + '. It feels like ' + feelsLike + ' degress out. The humidity is ' + body.current.humidity)
         }
     })
 }
